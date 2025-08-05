@@ -1,0 +1,85 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN5GMiIuWRmAhlHiy3G0TER",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/rodrigueztapiasronald/estudiantes-datos/blob/main/datos%20de%20estudiantes%20final\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "-Jo0j1Bzz1IV",
+        "outputId": "dc2baeec-1eee-4bb4-ca7c-bf9041817e82"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Base de datos de estudiantes con estado final:\n",
+            "\n",
+            "        Nombre      Materia  Nota     Estado\n",
+            "0   Ana García  Matemáticas   4.5   Aprobado\n",
+            "1  Luis Torres       Física   2.8  Reprobado\n",
+            "2  María López      Química   3.7   Aprobado\n",
+            "3   Pedro Díaz     Biología   4.2   Aprobado\n",
+            "4   Laura Ríos     Historia   2.9  Reprobado\n",
+            "\n",
+            "✅ Archivo CSV generado con éxito: base_datos_estudiantes.csv\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Paso 1: Importar la librería necesaria\n",
+        "import pandas as pd\n",
+        "\n",
+        "# Paso 2: Crear la base de datos en forma de diccionario\n",
+        "datos_estudiantes = {\n",
+        "    \"Nombre\": [\"Ana García\", \"Luis Torres\", \"María López\", \"Pedro Díaz\", \"Laura Ríos\"],\n",
+        "    \"Materia\": [\"Matemáticas\", \"Física\", \"Química\", \"Biología\", \"Historia\"],\n",
+        "    \"Nota\": [4.5, 2.8, 3.7, 4.2, 2.9]\n",
+        "}\n",
+        "\n",
+        "# Paso 3: Convertimos el diccionario a un DataFrame de pandas\n",
+        "df = pd.DataFrame(datos_estudiantes)\n",
+        "\n",
+        "# Paso 4: Agregamos una nueva columna \"Estado\" (Aprobado si nota >= 3.0)\n",
+        "df[\"Estado\"] = df[\"Nota\"].apply(lambda nota: \"Aprobado\" if nota >= 3.0 else \"Reprobado\")\n",
+        "\n",
+        "# Paso 5: Mostramos la tabla completa\n",
+        "print(\"Base de datos de estudiantes con estado final:\\n\")\n",
+        "print(df)\n",
+        "\n",
+        "# Paso 6: Guardamos la tabla como un archivo .csv\n",
+        "df.to_csv(\"base_datos_estudiantes.csv\", index=False)\n",
+        "\n",
+        "print(\"\\n✅ Archivo CSV generado con éxito: base_datos_estudiantes.csv\")\n"
+      ]
+    }
+  ]
+}
