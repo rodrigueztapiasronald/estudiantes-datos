@@ -1,0 +1,65 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNl1dFL3k8G3zABot8klh3h",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/rodrigueztapiasronald/estudiantes-datos/blob/main/base%20de%20datos%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "2vHyZetgwhF-"
+      },
+      "outputs": [],
+      "source": [
+        "# Base de datos de estudiantes\n",
+        "import pandas as pd\n",
+        "\n",
+        "data = {\n",
+        "    'ID_Estudiante': [101, 102, 103],\n",
+        "    'Nombre': ['Ana García', 'Luis Torres', 'María López'],\n",
+        "    'Materia': ['Matemáticas', 'Física', 'Química'],\n",
+        "    'Nota': [4.5, 3.8, 4.2]\n",
+        "}\n",
+        "\n",
+        "df = pd.DataFrame(data)\n",
+        "print(\"Base de datos de estudiantes:\")\n",
+        "print(df)\n",
+        "\n",
+        "# Guardamos en CSV\n",
+        "df.to_csv('estudiantes.csv', index=False)\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "B3yNi0nUxufj"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
